@@ -1,0 +1,5 @@
+2014-04-09  H.J. Lu  <hongjiu.lu@intel.com>
+
+	* sysdeps/x86_64/multiarch/init-arch.h (bit_ERMS): New.
+	(index_ERMS): Likewise.
+	(HAS_ERMS): Likewise.
