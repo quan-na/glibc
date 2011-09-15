@@ -32,7 +32,10 @@ ENTRY(__new_memcpy)
 	cmpl	$0, KIND_OFFSET+__cpu_features(%rip)
 	jne	1f
 	call	__init_cpu_features
-1:	leaq	__memcpy_sse2(%rip), %rax
+1:	leaq	__memcpy_erms(%rip), %rax
+	testl	$bit_ERMS, __cpu_features+CPUID_OFFSET+index_ERMS(%rip)
+	jnz	2f
+	leaq	__memcpy_sse2(%rip), %rax
 	testl	$bit_Slow_BSF, __cpu_features+FEATURE_OFFSET+index_Slow_BSF(%rip)
 	jnz	2f
 	leaq	__memcpy_sse2_unaligned(%rip), %rax
