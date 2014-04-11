@@ -41,13 +41,15 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 	      IFUNC_IMPL_ADD (array, i, bcopy, HAS_SSSE3,
 			      __bcopy_ssse3_rep)
 	      IFUNC_IMPL_ADD (array, i, bcopy, HAS_SSSE3, __bcopy_ssse3)
-	      IFUNC_IMPL_ADD (array, i, bcopy, 1, __bcopy_ia32))
+	      IFUNC_IMPL_ADD (array, i, bcopy, 1, __bcopy_ia32)
+	      IFUNC_IMPL_ADD (array, i, bcopy, 1, __bcopy_erms))
 
   /* Support sysdeps/i386/i686/multiarch/bzero.S.  */
   IFUNC_IMPL (i, name, bzero,
 	      IFUNC_IMPL_ADD (array, i, bzero, HAS_SSE2, __bzero_sse2_rep)
 	      IFUNC_IMPL_ADD (array, i, bzero, HAS_SSE2, __bzero_sse2)
-	      IFUNC_IMPL_ADD (array, i, bzero, 1, __bzero_ia32))
+	      IFUNC_IMPL_ADD (array, i, bzero, 1, __bzero_ia32)
+	      IFUNC_IMPL_ADD (array, i, bzero, 1, __bzero_erms))
 
   /* Support sysdeps/i386/i686/multiarch/memchr.S.  */
   IFUNC_IMPL (i, name, memchr,
@@ -70,7 +72,9 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 	      IFUNC_IMPL_ADD (array, i, __memmove_chk, HAS_SSSE3,
 			      __memmove_chk_ssse3)
 	      IFUNC_IMPL_ADD (array, i, __memmove_chk, 1,
-			      __memmove_chk_ia32))
+			      __memmove_chk_ia32)
+	      IFUNC_IMPL_ADD (array, i, __memmove_chk, 1,
+			      __memmove_chk_erms))
 
   /* Support sysdeps/i386/i686/multiarch/memmove.S.  */
   IFUNC_IMPL (i, name, memmove,
@@ -78,7 +82,8 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 			      __memmove_ssse3_rep)
 	      IFUNC_IMPL_ADD (array, i, memmove, HAS_SSSE3,
 			      __memmove_ssse3)
-	      IFUNC_IMPL_ADD (array, i, memmove, 1, __memmove_ia32))
+	      IFUNC_IMPL_ADD (array, i, memmove, 1, __memmove_ia32)
+	      IFUNC_IMPL_ADD (array, i, memmove, 1, __memmove_erms))
 
   /* Support sysdeps/i386/i686/multiarch/memrchr.S.  */
   IFUNC_IMPL (i, name, memrchr,
@@ -94,14 +99,17 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 	      IFUNC_IMPL_ADD (array, i, __memset_chk, HAS_SSE2,
 			      __memset_chk_sse2)
 	      IFUNC_IMPL_ADD (array, i, __memset_chk, 1,
-			      __memset_chk_ia32))
+			      __memset_chk_ia32)
+	      IFUNC_IMPL_ADD (array, i, __memset_chk, 1,
+			      __memset_chk_erms))
 
   /* Support sysdeps/i386/i686/multiarch/memset.S.  */
   IFUNC_IMPL (i, name, memset,
 	      IFUNC_IMPL_ADD (array, i, memset, HAS_SSE2,
 			      __memset_sse2_rep)
 	      IFUNC_IMPL_ADD (array, i, memset, HAS_SSE2, __memset_sse2)
-	      IFUNC_IMPL_ADD (array, i, memset, 1, __memset_ia32))
+	      IFUNC_IMPL_ADD (array, i, memset, 1, __memset_ia32)
+	      IFUNC_IMPL_ADD (array, i, memset, 1, __memset_erms))
 
   /* Support sysdeps/i386/i686/multiarch/rawmemchr.S.  */
   IFUNC_IMPL (i, name, rawmemchr,
@@ -269,14 +277,17 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 	      IFUNC_IMPL_ADD (array, i, __memcpy_chk, HAS_SSSE3,
 			      __memcpy_chk_ssse3)
 	      IFUNC_IMPL_ADD (array, i, __memcpy_chk, 1,
-			      __memcpy_chk_ia32))
+			      __memcpy_chk_ia32)
+	      IFUNC_IMPL_ADD (array, i, __memcpy_chk, 1,
+			      __memcpy_chk_erms))
 
   /* Support sysdeps/i386/i686/multiarch/memcpy.S.  */
   IFUNC_IMPL (i, name, memcpy,
 	      IFUNC_IMPL_ADD (array, i, memcpy, HAS_SSSE3,
 			      __memcpy_ssse3_rep)
 	      IFUNC_IMPL_ADD (array, i, memcpy, HAS_SSSE3, __memcpy_ssse3)
-	      IFUNC_IMPL_ADD (array, i, memcpy, 1, __memcpy_ia32))
+	      IFUNC_IMPL_ADD (array, i, memcpy, 1, __memcpy_ia32)
+	      IFUNC_IMPL_ADD (array, i, memcpy, 1, __memcpy_erms))
 
   /* Support sysdeps/i386/i686/multiarch/mempcpy_chk.S.  */
   IFUNC_IMPL (i, name, __mempcpy_chk,
@@ -285,7 +296,9 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 	      IFUNC_IMPL_ADD (array, i, __mempcpy_chk, HAS_SSSE3,
 			      __mempcpy_chk_ssse3)
 	      IFUNC_IMPL_ADD (array, i, __mempcpy_chk, 1,
-			      __mempcpy_chk_ia32))
+			      __mempcpy_chk_ia32)
+	      IFUNC_IMPL_ADD (array, i, __mempcpy_chk, 1,
+			      __mempcpy_chk_erms))
 
   /* Support sysdeps/i386/i686/multiarch/mempcpy.S.  */
   IFUNC_IMPL (i, name, mempcpy,
@@ -293,7 +306,8 @@ __libc_ifunc_impl_list (const char *name, struct libc_ifunc_impl *array,
 			      __mempcpy_ssse3_rep)
 	      IFUNC_IMPL_ADD (array, i, mempcpy, HAS_SSSE3,
 			      __mempcpy_ssse3)
-	      IFUNC_IMPL_ADD (array, i, mempcpy, 1, __mempcpy_ia32))
+	      IFUNC_IMPL_ADD (array, i, mempcpy, 1, __mempcpy_ia32)
+	      IFUNC_IMPL_ADD (array, i, mempcpy, 1, __mempcpy_erms))
 
   /* Support sysdeps/i386/i686/multiarch/strlen.S.  */
   IFUNC_IMPL (i, name, strlen,
